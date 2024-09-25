@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-4 mb-4">
+      <h2 class="mb-4">Exam List</h2>
+      <ul class="list-group">
+          <li *ngFor="let exam of exams" 
+              (click)="onSelect(exam.id)" 
+              class="list-group-item list-group-item-action d-flex justify-content-between align-items-center cursor-pointer">
+              <span>{{ exam.name }}</span>
+              <span class="badge badge-primary badge-pill">{{ exam.mark }}</span>
+          </li>
+      </ul>
+  </div>
+</body>
+</html>

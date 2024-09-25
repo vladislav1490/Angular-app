@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Details</title>
+</head>
+<body>
+    <div *ngIf="exam" class="container mt-2">
+        <h2 class="mb-4">{{ exam.name }} Details</h2>
+        
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Exam Details</h5>
+            <p class="card-text"><strong>Mark:</strong> {{ exam.mark }}</p>
+            <p class="card-text"><strong>Enrollee:</strong> {{ exam.enrollee }}</p>
+            
+            <button (click)="goBack()" class="btn btn-primary">Back</button>
+            
+            <a [routerLink]="['/exams', exam.id.toString(), 'edit']" class="btn btn-primary ml-2">Edit Exam</a>
+          </div>
+        </div>
+    </div>    
+</body>
+</html>
